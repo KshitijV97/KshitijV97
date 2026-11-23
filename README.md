@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://kshitijv.vercel.app/"><img alt="Portfolio" src="https://img.shields.io/badge/PORTFOLIO-kshitijv.vercel.app-6fd3b4?style=for-the-badge&labelColor=0d0f12"></a>
   <a href="https://www.linkedin.com/in/kshitijv97"><img alt="LinkedIn" src="https://img.shields.io/badge/LINKEDIN-in%2Fkshitijv97-6fd3b4?style=for-the-badge&labelColor=0d0f12&logo=linkedin&logoColor=0d0f12"></a>
-  <a href="mailto:writetokshitij@gmail.com"><img alt="Email" src="https://img.shields.io/badge/EMAIL-writetokshitij%40gmail.com-6fd3b4?style=for-the-badge&labelColor=0d0f12&logo=gmail&logoColor=0d0f12"></a>
+  <a href="mailto:writetokshitij@gmail.com"><img alt="Email" src="https://img.shields.io/badge/CONTACT-SAY_HELLO-6fd3b4?style=for-the-badge&labelColor=0d0f12&logo=gmail&logoColor=0d0f12"></a>
   <a href="https://kshitijv.vercel.app/resume.pdf"><img alt="Résumé" src="https://img.shields.io/badge/R%C3%89SUM%C3%89-PDF-6fd3b4?style=for-the-badge&labelColor=0d0f12&logo=adobeacrobatreader&logoColor=0d0f12"></a>
 </p>
 
