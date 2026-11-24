@@ -58,7 +58,7 @@ One GDPR-compliant fraud platform built four ways on Google Cloud — fully mana
 <br>
 
 `smart-grid-analytics` next-day Ottawa load forecasting with XGBoost, Go and Terraform ·
-`golden-tide-retreat` a booking engine for a family homestay on the Konkan coast ·
+`discover-tarkarli` stays, food and sea adventures on the Malvan coast, with a real booking engine ·
 `vouchor` a checked, approved, proven action engine (design stage) ·
 `dev-platform` a zero-cost Canadian dev platform on Oracle Always Free ·
 `data-quality-tutorial` six activities where every number comes from a logged run ·
