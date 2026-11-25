@@ -1,0 +1,16 @@
+{
+  "claude_code": 8,
+  "opencode": 1,
+  "antigravity": 0,
+  "agents_md": 5,
+  "repos": 73,
+  "active90": 11,
+  "active365": 12,
+  "osi_active": 6,
+  "ci_repos": 10,
+  "workflows": 22,
+  "commits": 188,
+  "agent_commits": 115,
+  "stars": 1,
+  "updated": "2026-11-25 05:24 UTC"
+}

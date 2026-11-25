@@ -13,121 +13,121 @@
   <a href="https://kshitijv.vercel.app/resume.pdf"><img alt="Résumé" src="https://img.shields.io/badge/R%C3%89SUM%C3%89-PDF-6fd3b4?style=for-the-badge&labelColor=0d0f12&logo=adobeacrobatreader&logoColor=0d0f12"></a>
 </p>
 
-```console
-$ whoami
-Kshitij Vengurlekar — software engineer
+I build agentic loops that ship code from ticket to deploy, and the checks that prove they did it right.
 
-$ cat /status
-M.Eng. Applied AI @ University of Ottawa · Ottawa | Toronto
-open to Winter 2027 (Jan–Apr) and Summer 2027 (May–Aug) co-ops
+Six years at **HSBC** and **Deutsche Bank** (Corporate Bank and DWS) on payments, cash management and ETF platforms, where correctness wasn't optional. Now an M.Eng. in Applied AI at the **University of Ottawa**, applying the same discipline to coding agents.
 
-$ cat /principle
-A system isn't done until you can prove it did what it claims.
-That matters more, not less, once AI is in the loop.
+> A system isn't done until you can prove it did what it claims. That matters more, not less, once AI is in the loop.
+
+<sub>**Open to** Winter 2027 (Jan–Apr) and Summer 2027 (May–Aug) co-ops · Applied AI, ML engineering, AI platform · Ottawa, Toronto or remote</sub>
+
+---
+
+## How I build
+
+Every repo below follows the same four steps. The agent writes the code. A deterministic check decides whether it ships.
+
+```text
+  spec  ──▶  agent  ──▶  guardrails  ──▶  deterministic check  ──▶  merge
+  AGENTS.md  Claude Code   hooks, OPA,      tests, CI, parity
+  ADRs       OpenCode      policy-as-code   and benchmark gates
+             Antigravity
 ```
 
-Six years building payments, cash management and wealth platforms at **HSBC**, **Deutsche Bank** (and DWS) and **Synthix** — three products from blank page to production, two legacy platforms modernised, and about thirty engineers moved off a paid data-grid licence onto one I wrote.
+| Agent | Role in the loop | Where it shows up |
+|:--|:--|:--|
+| **Claude Code** | Primary agent. Each repo carries a `CLAUDE.md` contract, with project hooks and skills in `.claude/` | [craft-rail](https://github.com/KshitijV97/craft-rail) · [pursuit-kit](https://github.com/KshitijV97/pursuit-kit) · [discover-tarkarli](https://github.com/KshitijV97/discover-tarkarli) · [ai-powered-data-governance](https://github.com/KshitijV97/ai-powered-data-governance) |
+| **OpenCode** | Open-source (MIT) agent that runs from the same `AGENTS.md` contract, so specs aren't tied to one vendor | [pursuit-kit](https://github.com/KshitijV97/pursuit-kit) (`opencode.json`) |
+| **Antigravity** | Google's agent-first IDE, working from the same `AGENTS.md` rules | `AGENTS.md` in [craft-rail](https://github.com/KshitijV97/craft-rail) · [vouchor](https://github.com/KshitijV97/vouchor) |
+| **CraftRail** | My own agent-neutral framework that keeps requirements, ADRs and verification evidence in step | [craft-rail](https://github.com/KshitijV97/craft-rail) |
 
-Now I'm at uOttawa building **software factories**: AI coding agents that work from a written spec, inside guardrails, with automated checks that prove what they did. Every project below states its own numbers, because a claim without evidence is just a vibe.
+Agent-written commits carry a `Co-Authored-By` trailer, so you can check which code came from an agent instead of taking my word for it.
+
+## Live evidence
+
+<!-- METRICS:START -->
+| Signal | Value | Measured as |
+|:--|:--|:--|
+| Commits to my public repos, last 12 months | **188** | <sub>author = me, non-fork repos</sub> |
+| …of which written with a coding agent | **115** (61%) | <sub>commit carries a `Co-Authored-By` trailer naming the agent</sub> |
+| Active repos with an agent contract | **5 AGENTS.md** · **8 CLAUDE.md** | <sub>file at repo root</sub> |
+| Repos configured for Claude Code / OpenCode / Antigravity | **8** / **1** / **0** | <sub>`CLAUDE.md`·`.claude/` / `opencode.json`·`.opencode/` / `.agent/`·`GEMINI.md`</sub> |
+| Active repos gated by CI | **10** of 12 (22 workflows) | <sub>`.github/workflows/*.yml`</sub> |
+| Active repos under an OSI-approved licence | **6** of 12 | <sub>GitHub-detected SPDX id</sub> |
+| Repos pushed in the last 90 days | **11** | <sub>of 73 public originals</sub> |
+
+<sub>Regenerated daily from the public GitHub API by [`update_metrics.py`](scripts/update_metrics.py) · last run 2026-11-25 05:24 UTC · "active" = pushed in the last 12 months</sub>
+<!-- METRICS:END -->
+
+## Career numbers
+
+| | |
+|:--|:--|
+| **6 yrs** | shipping production fintech at two global banks |
+| **3** | products taken from blank page to production · **2** legacy platforms modernised |
+| **2** | first corporate clients taken live on dbFrontier, a cash-management SaaS on Cloud Run |
+| **≈ $30K** | in licence costs removed by replacing the paid AG Grid dependency with a headless data grid I wrote |
+| **~20 min** | single-click Jenkins release pipeline at HSBC, replacing a manual process |
+| **Grad cohort** | taught advanced programming in Deutsche Bank's graduate-hire curriculum |
 
 ---
 
 ## Selected work
 
-**[SwinUNETR → ONNX → TensorRT](https://github.com/KshitijV97/swinunetr-spleen-tensorrt)** · `PyTorch` `MONAI` `ONNX` `TensorRT` `CUDA`
-3D spleen segmentation in CT: trained in MONAI, exported to ONNX behind a parity check, compiled to a TensorRT FP16 engine and benchmarked on a T4. **5.58× faster than PyTorch FP32 at the same Dice**, with a benchmark protocol that says what every number means.
-
-**[AI data governance for PIPEDA](https://github.com/KshitijV97/ai-powered-data-governance)** · `Python` `OpenMetadata` `Presidio` `MCP` `Docker`
-A fictional Canadian bank on synthetic data, governed with OpenMetadata, to test how far AI-assisted metadata can carry PIPEDA compliance. Canada-tuned recognizers lift PII-classification **F1 from 0.78 to 0.94** across 145 labelled columns.
-
-**[Pursuit Kit](https://github.com/KshitijV97/pursuit-kit)** · `TypeScript` `Hono` `Cloudflare Workers` `Vitest` `Playwright`
-Paste a job posting, get a tailored résumé and cover letter in your own Drive — where **every claim traces back to evidence you recorded**. No fabrication, no inflated credit.
-
-**[Between Us](https://github.com/KshitijV97/between-us)** · `Go` `React` `SQLite` `OpenTelemetry`
-A local-first app that turns a WhatsApp or Telegram export into metrics, relationship patterns and cited answers, from the CLI or an HTTP API.
-
-**[CraftRail](https://github.com/KshitijV97/craft-rail)** · `Python` `AI agents` `ADRs` `GitHub Actions`
-A Git-native, agent-neutral framework that keeps requirements, architecture decisions and verification evidence aligned when humans and coding agents build together.
-
-**[GCP Fintech Architecture Playbook](https://github.com/KshitijV97/gcp-fintech-architecture-playbook)** · `Terraform` `Google Cloud` `OPA` `GDPR` `PIPEDA`
-One GDPR-compliant fraud platform built four ways on Google Cloud — fully managed through hybrid — then extended to Canada under PIPEDA, with policy-as-code and diagrams that stay in sync.
+| Project | What it proves | Number |
+|:--|:--|:--|
+| **[SwinUNETR → ONNX → TensorRT](https://github.com/KshitijV97/swinunetr-spleen-tensorrt)**<br><sub>PyTorch · MONAI · ONNX · TensorRT · CUDA</sub> | 3D spleen segmentation in CT, exported behind a parity check and compiled to an FP16 engine on a T4 | **5.58×** faster than PyTorch FP32, same Dice |
+| **[AI data governance for PIPEDA](https://github.com/KshitijV97/ai-powered-data-governance)**<br><sub>Python · OpenMetadata · Presidio · MCP</sub> | AI-assisted metadata for a synthetic Canadian bank, with an MCP assistant for privacy questions | PII F1 **0.78 → 0.94** on 145 labelled columns |
+| **[Pursuit Kit](https://github.com/KshitijV97/pursuit-kit)**<br><sub>TypeScript · Hono · Cloudflare Workers · Playwright</sub> | Tailored résumés where every claim traces back to recorded evidence | **5** CI workflows gate every change |
+| **[CraftRail](https://github.com/KshitijV97/craft-rail)**<br><sub>Python · ADRs · GitHub Actions</sub> | Git-native, agent-neutral framework for humans and agents building together | MIT |
+| **[Vouchor](https://github.com/KshitijV97/vouchor)**<br><sub>Python · Ollama · LLM agents</sub> | Self-hosted assistant where every action is checked, approved and proven after it runs | AGPL-3.0 · design stage |
+| **[GCP Fintech Playbook](https://github.com/KshitijV97/gcp-fintech-architecture-playbook)**<br><sub>Terraform · Google Cloud · OPA</sub> | One GDPR fraud platform built four ways, extended to PIPEDA, with policy-as-code | **4** reference architectures |
+| **[Between Us](https://github.com/KshitijV97/between-us)**<br><sub>Go · React · SQLite · OpenTelemetry</sub> | Local-first: chat exports become metrics and cited answers, and nothing leaves the machine | **4** CI workflows |
 
 <details>
-<summary><b>Everything else</b> — 20+ public repos of practice, tutorials and things I broke on purpose</summary>
+<summary><b>More work</b>: smart-grid forecasting, a booking engine, hackathons, and a learning log</summary>
 
 <br>
 
-`smart-grid-analytics` next-day Ottawa load forecasting with XGBoost, Go and Terraform ·
-`discover-tarkarli` stays, food and sea adventures on the Malvan coast, with a real booking engine ·
-`vouchor` a checked, approved, proven action engine (design stage) ·
-`dev-platform` a zero-cost Canadian dev platform on Oracle Always Free ·
-`data-quality-tutorial` six activities where every number comes from a logged run ·
-`ai-powered-chatbot-voiceflow` agentic cash-management Q&A over ISO 20022 statements
+`smart-grid-analytics`: next-day Ottawa load forecasting (XGBoost, Go, Terraform) ·
+`discover-tarkarli`: a live booking platform where a Postgres exclusion constraint makes double-booking impossible ·
+`dev-platform`: a zero-cost Canadian dev platform on Oracle Always Free ·
+`ai-powered-chatbot-voiceflow`: agentic cash-management Q&A over ISO 20022 statements, on self-hosted ERPNext and Firefly III ·
+plus 22 practice repos, kept in the [learning log](https://kshitijv.vercel.app/learning) for honesty rather than as portfolio pieces.
 
 </details>
 
 ---
 
-## Numbers
+## Free and open-source software
 
-| Metric | Value |
-|:--|:--|
-| Years shipping production fintech | **6** |
-| Products taken from zero to production | **3** |
-| Legacy platforms modernised | **2** |
-| Best inference speedup shipped | **5.58×** (TensorRT FP16 vs PyTorch FP32) |
-| Best classifier lift shipped | **F1 0.78 → 0.94** on PII tagging |
-| Engineers migrated onto my data grid | **30** |
+I default to software that users can read, run, change and self-host.
 
-<p align="center">
-  <img height="165" alt="KshitijV97's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=KshitijV97&show_icons=true&hide_border=true&include_all_commits=true&rank_icon=github&bg_color=00000000&title_color=6fd3b4&text_color=8a8f9a&icon_color=6fd3b4">
-  <img height="165" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KshitijV97&layout=compact&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5&bg_color=00000000&title_color=6fd3b4&text_color=8a8f9a">
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=KshitijV97&hide_border=true&background=00000000&ring=6fd3b4&fire=6fd3b4&currStreakNum=f6f4ef&sideNums=eceae4&currStreakLabel=6fd3b4&sideLabels=8a8f9a&dates=686d78">
-    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=KshitijV97&hide_border=true&background=00000000&ring=1f6f5c&fire=1f6f5c&currStreakNum=16181d&sideNums=16181d&currStreakLabel=1f6f5c&sideLabels=686d78&dates=8a8f9a">
-    <img alt="Commit streak" src="https://streak-stats.demolab.com/?user=KshitijV97&hide_border=true&background=00000000&ring=1f6f5c&fire=1f6f5c&currStreakNum=16181d&sideNums=16181d&currStreakLabel=1f6f5c&sideLabels=686d78&dates=8a8f9a">
-  </picture>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=KshitijV97&hide_border=true&theme=github-compact&bg_color=0d0f12&color=6fd3b4&line=6fd3b4&point=6fd3b4&title_color=6fd3b4&area=true&area_color=6fd3b4">
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=KshitijV97&hide_border=true&theme=github&bg_color=f6f4ef&color=1f6f5c&line=1f6f5c&point=1f6f5c&title_color=1f6f5c&area=true&area_color=1f6f5c">
-    <img alt="Contribution activity over the last year" src="https://github-readme-activity-graph.vercel.app/graph?username=KshitijV97&hide_border=true&theme=github&bg_color=f6f4ef&color=1f6f5c&line=1f6f5c&point=1f6f5c&title_color=1f6f5c&area=true&area_color=1f6f5c">
-  </picture>
-</p>
+- **Licensing:** my repos are released under OSI licences, with **Apache-2.0** as the default. [Vouchor](https://github.com/KshitijV97/vouchor) uses **AGPL-3.0** so hosted forks stay open too, and [CraftRail](https://github.com/KshitijV97/craft-rail) and the [GCP playbook](https://github.com/KshitijV97/gcp-fintech-architecture-playbook) use **MIT**.
+- **Local-first and self-hosted:** Vouchor runs on local models through Ollama, Between Us keeps your chats on your machine, and the cash-management agent runs on self-hosted ERPNext and Firefly III.
+- **Built on open tools:** PyTorch, MONAI, ONNX, OpenMetadata, Presidio, OpenTelemetry, PostgreSQL, SQLite, Go, Linux. I've self-hosted mail, chat, storage and monitoring on bare metal with Ansible, Traefik and WireGuard.
+- **Agent-neutral by design:** specs live in plain `AGENTS.md` and ADRs, so an open-source agent like OpenCode can do the same job as a proprietary one.
 
 ---
 
-## Track record
+## Experience
 
 | When | Role | Where |
 |:--|:--|:--|
-| Sep 2026 — now | M.Eng., Electrical & Computer Engineering (Applied AI) | University of Ottawa |
-| Sep 2024 — Jul 2026 | Senior Software Engineer · Assistant Vice President | Deutsche Bank · DWS |
-| Jul 2022 — Sep 2024 | Software Engineer · Associate | Deutsche Bank · Corporate Bank |
-| Mar 2021 — Jun 2022 | Software Engineer | HSBC |
-| Sep 2020 — Mar 2021 | Trainee Software Engineer | HSBC |
+| Sep 2026 – now | M.Eng., Electrical & Computer Engineering (Applied AI) | University of Ottawa |
+| Mar 2026 – Jul 2026 | Assistant Vice President | Deutsche Bank · DWS (Xtrackers ETFs) |
+| Jun 2022 – Mar 2026 | Associate Software Engineer | Deutsche Bank · embedded finance (Synthix, dbFrontier) |
+| Mar 2021 – Jun 2022 | Software Engineer | HSBC |
+| Sep 2020 – Mar 2021 | Trainee Software Engineer | HSBC |
 
-At DWS I owned bringing the ETF platform's portfolio-composition calculations in-house, letting the bank drop third-party data subscriptions; at the corporate bank I shipped a greenfield cash-management SaaS from blank page to live clients on Cloud Run, Terraform and Spring Boot; at HSBC I built an ISO 20022 refunds product that became the bank's reference case for Google Cloud.
-
-## Toolkit
-
-**Languages** `Java` `Go` `TypeScript` `Python` `SQL` `Solidity`
-**AI / ML** `PyTorch` `MONAI` `CUDA` `TensorRT` `ONNX` `LangChain` `RAG` `agents`
-**Backend & data** `Spring Boot` `gRPC` `event-driven` `PostgreSQL` `Data Vault 2.0` `StreamSets`
-**Frontend** `React` `Redux` `micro-frontends` `Vite` `Turborepo` `Storybook` `WCAG 2.0 AA`
-**Cloud & platform** `Google Cloud` `Cloud Run` `Pub/Sub` `Kubernetes` `Terraform` `Docker` `Apigee` `CI/CD`
+**Languages** `Java` `Go` `TypeScript` `Python` `SQL`
+**AI / ML** `PyTorch` `MONAI` `CUDA` `TensorRT` `ONNX` `RAG` `MCP` `agents`
+**Backend & data** `Spring Boot` `gRPC` `event-driven` `PostgreSQL` `Data Vault 2.0`
+**Cloud & platform** `Google Cloud` `Cloud Run` `Pub/Sub` `Kubernetes` `Terraform` `Docker` `GitHub Actions`
+**Frontend** `React` `micro-frontends` `Vite` `Storybook` `WCAG 2.0 AA`
 
 ---
 
 <p align="center">
   <sub><b>Ottawa | Toronto</b> · <a href="mailto:writetokshitij@gmail.com">writetokshitij@gmail.com</a> · <a href="https://kshitijv.vercel.app/">kshitijv.vercel.app</a> · <a href="https://calendly.com/writetokshitij/15min">book 15 minutes</a></sub>
-</p>
-
-<p align="center">
-  <sub>Hiring for Winter or Summer 2027? I'd rather show you the pipeline than the pitch.</sub>
 </p>
