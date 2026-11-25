@@ -37,6 +37,9 @@ AGENT_FILES = {
 }
 TRAILER = re.compile(r"^co-authored-by:\s*(.+)$", re.I | re.M)
 AGENT_TRAILER = re.compile(r"claude|opencode|gemini|antigravity", re.I)
+# Housekeeping commits (licence files) are not work: they neither make a repo
+# "active" nor count towards commit totals.
+CHORE = re.compile(r"^(relicen[cs]e\b|(add|update)\b.*\blicen[cs]e)", re.I)
 
 
 def get(path: str, token: str):
@@ -83,9 +86,27 @@ def collect(user: str, token: str) -> dict:
         pushed = dt.datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00"))
         m["stars"] += r["stargazers_count"]
         if pushed < year_ago:
-            continue  # old practice repos: counted in total, not scanned
+            continue  # untouched for a year: counted in total, not scanned
+
+        # Activity comes from real commits, not from the push timestamp, so a
+        # licence-only change doesn't make an old repo look active.
+        since = year_ago.strftime("%Y-%m-%dT%H:%M:%SZ")
+        commits = [c for c in get(f"/repos/{user}/{name}/commits?since={since}&per_page=100", token) or []
+                   if not CHORE.match(c["commit"]["message"].splitlines()[0] if c["commit"]["message"] else "")
+                   and (c.get("author") or {}).get("type") != "Bot"]
+        if not commits:
+            continue
+        latest = max(dt.datetime.fromisoformat(c["commit"]["committer"]["date"].replace("Z", "+00:00"))
+                     for c in commits)
         m["active365"] += 1
-        m["active90"] += pushed >= ninety
+        m["active90"] += latest >= ninety
+
+        for c in commits:
+            if ((c.get("author") or {}).get("login") or "").lower() != user.lower():
+                continue
+            m["commits"] += 1
+            if any(AGENT_TRAILER.search(t) for t in TRAILER.findall(c["commit"]["message"])):
+                m["agent_commits"] += 1
 
         spdx = (r.get("license") or {}).get("spdx_id")
         m["osi_active"] += spdx in OSI
@@ -98,12 +119,6 @@ def collect(user: str, token: str) -> dict:
         wf = [w for w in wf if w["name"].endswith((".yml", ".yaml"))]
         m["workflows"] += len(wf)
         m["ci_repos"] += bool(wf)
-
-        since = year_ago.strftime("%Y-%m-%dT%H:%M:%SZ")
-        for c in get(f"/repos/{user}/{name}/commits?author={user}&since={since}&per_page=100", token) or []:
-            m["commits"] += 1
-            if any(AGENT_TRAILER.search(t) for t in TRAILER.findall(c["commit"]["message"])):
-                m["agent_commits"] += 1
 
     m["updated"] = now.strftime("%Y-%m-%d %H:%M UTC")
     return m
@@ -125,14 +140,14 @@ def render(m: dict, user: str) -> str:
          "`.github/workflows/*.yml`"),
         ("Active repos under an OSI-approved licence", f"**{m['osi_active']}** of {m['active365']}",
          "GitHub-detected SPDX id"),
-        ("Repos pushed in the last 90 days", f"**{m['active90']}**", f"of {m['repos']} public originals"),
+        ("Repos with commits in the last 90 days", f"**{m['active90']}**", f"of {m['repos']} public originals"),
     ]
     lines = ["| Signal | Value | Measured as |", "|:--|:--|:--|"]
     lines += [f"| {a} | {b} | <sub>{c}</sub> |" for a, b, c in rows]
     lines.append("")
     lines.append(f"<sub>Regenerated daily from the public GitHub API by "
                  f"[`update_metrics.py`](scripts/update_metrics.py) · last run {m['updated']} · "
-                 f"\"active\" = pushed in the last 12 months</sub>")
+                 f"\"active\" = a non-licence commit in the last 12 months</sub>")
     return "\n".join(lines)
 
 

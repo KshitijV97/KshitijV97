@@ -48,15 +48,15 @@ Agent-written commits carry a `Co-Authored-By` trailer, so you can check which c
 <!-- METRICS:START -->
 | Signal | Value | Measured as |
 |:--|:--|:--|
-| Commits to my public repos, last 12 months | **229** | <sub>author = me, non-fork repos</sub> |
-| …of which written with a coding agent | **156** (68%) | <sub>commit carries a `Co-Authored-By` trailer naming the agent</sub> |
+| Commits to my public repos, last 12 months | **188** | <sub>author = me, non-fork repos</sub> |
+| …of which written with a coding agent | **115** (61%) | <sub>commit carries a `Co-Authored-By` trailer naming the agent</sub> |
 | Active repos with an agent contract | **5 AGENTS.md** · **8 CLAUDE.md** | <sub>file at repo root</sub> |
 | Repos configured for Claude Code / OpenCode / Antigravity | **8** / **1** / **0** | <sub>`CLAUDE.md`·`.claude/` / `opencode.json`·`.opencode/` / `.agent/`·`GEMINI.md`</sub> |
-| Active repos gated by CI | **11** of 48 (23 workflows) | <sub>`.github/workflows/*.yml`</sub> |
-| Active repos under an OSI-approved licence | **46** of 48 | <sub>GitHub-detected SPDX id</sub> |
-| Repos pushed in the last 90 days | **47** | <sub>of 73 public originals</sub> |
+| Active repos gated by CI | **11** of 12 (23 workflows) | <sub>`.github/workflows/*.yml`</sub> |
+| Active repos under an OSI-approved licence | **10** of 12 | <sub>GitHub-detected SPDX id</sub> |
+| Repos with commits in the last 90 days | **11** | <sub>of 73 public originals</sub> |
 
-<sub>Regenerated daily from the public GitHub API by [`update_metrics.py`](scripts/update_metrics.py) · last run 2026-11-25 12:14 UTC · "active" = pushed in the last 12 months</sub>
+<sub>Regenerated daily from the public GitHub API by [`update_metrics.py`](scripts/update_metrics.py) · last run 2026-11-25 12:28 UTC · "active" = a non-licence commit in the last 12 months</sub>
 <!-- METRICS:END -->
 
 ## Career numbers
