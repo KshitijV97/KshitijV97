@@ -54,9 +54,9 @@ Agent-written commits carry a `Co-Authored-By` trailer, so you can check which c
 | Repos configured for Claude Code / OpenCode / Antigravity | **8** / **1** / **0** | <sub>`CLAUDE.md`·`.claude/` / `opencode.json`·`.opencode/` / `.agent/`·`GEMINI.md`</sub> |
 | Active repos gated by CI | **11** of 12 (23 workflows) | <sub>`.github/workflows/*.yml`</sub> |
 | Active repos under an OSI-approved licence | **10** of 12 | <sub>GitHub-detected SPDX id</sub> |
-| Repos with commits in the last 90 days | **11** | <sub>of 73 public originals</sub> |
+| Repos with commits in the last 90 days | **11** | <sub>of 60 public originals</sub> |
 
-<sub>Regenerated daily from the public GitHub API by [`update_metrics.py`](scripts/update_metrics.py) · last run 2026-11-25 12:29 UTC · "active" = a non-licence commit in the last 12 months</sub>
+<sub>Regenerated daily from the public GitHub API by [`update_metrics.py`](scripts/update_metrics.py) · last run 2026-11-26 17:03 UTC · "active" = a non-licence commit in the last 12 months</sub>
 <!-- METRICS:END -->
 
 ## Career numbers

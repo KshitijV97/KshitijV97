@@ -3,7 +3,7 @@
   "opencode": 1,
   "antigravity": 0,
   "agents_md": 5,
-  "repos": 73,
+  "repos": 60,
   "active90": 11,
   "active365": 12,
   "osi_active": 10,
@@ -12,5 +12,5 @@
   "commits": 189,
   "agent_commits": 116,
   "stars": 1,
-  "updated": "2026-11-25 12:29 UTC"
+  "updated": "2026-11-26 17:03 UTC"
 }
